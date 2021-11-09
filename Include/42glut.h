@@ -32,6 +32,7 @@ EXTERN GLuint CamWindow;
 EXTERN GLuint MapWindow;
 EXTERN GLuint OrreryWindow;
 EXTERN GLuint SphereWindow;
+EXTERN GLuint AlbedoWindow;
 
 /*
 ** #ifdef __cplusplus
