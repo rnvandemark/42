@@ -19,8 +19,8 @@ endif
 ifeq ($(AUTOPLATFORM),Failed)
    # Autodetect failed.  Set platform manually.
    #42PLATFORM = __APPLE__
-   #42PLATFORM = __linux__
-   42PLATFORM = __MSYS__
+   42PLATFORM = __linux__
+   #42PLATFORM = __MSYS__
 endif
 
 
@@ -29,8 +29,8 @@ GUIFLAG = -D _ENABLE_GUI_
 
 # For graphics interface, choose GLUT or GLFW GUI libraries
 # GLUT is well known, but GLFW is better for newer Mac's hires displays
-GLUT_OR_GLFW = _USE_GLFW_
-#GLUT_OR_GLFW = _USE_GLUT_
+#GLUT_OR_GLFW = _USE_GLFW_
+GLUT_OR_GLFW = _USE_GLUT_
 
 SHADERFLAG = -D _USE_SHADERS_
 #SHADERFLAG =
@@ -114,8 +114,8 @@ ifeq ($(42PLATFORM),__linux__)
    ARCHFLAG =
 
    ifneq ($(strip $(GUIFLAG)),)
-      #GLINC = -I /usr/include/
-      GLINC = -I $(KITDIR)/include/GL/
+      GLINC = -I /usr/include/
+      #GLINC = -I $(KITDIR)/include/GL/
       ifeq ($(strip $(GLUT_OR_GLFW)),_USE_GLUT_)
          GUIOBJ = $(OBJ)42gl.o $(OBJ)42glut.o $(OBJ)glkit.o $(OBJ)42gpgpu.o
          LIBS = -lglut -lGLU -lGL -ldl -lm -lpthread
